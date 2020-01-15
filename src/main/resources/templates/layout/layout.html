@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html th:fragment="layout (title, content)" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title th:replace="${title}">AdminLTE 3 | Dashboard 3</title>
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" th:href="@{css/fontawesome-free/css/all.min.css}">
+        <!-- IonIcons -->
+        <link rel="stylesheet" th:href="@{http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css}">
+        <!-- Theme style -->
+        <link rel="stylesheet" th:href="@{css/adminlte/adminlte.min.css}">
+    </head>
+    <!--
+    BODY TAG OPTIONS:
+    =================
+    Apply one or more of the following classes to to the body tag
+    to get the desired effect
+    |---------------------------------------------------------|
+    |LAYOUT OPTIONS | sidebar-collapse                        |
+    |               | sidebar-mini                            |
+    |---------------------------------------------------------|
+    -->
+    <body class="hold-transition sidebar-mini">
+        <div class="wrapper">
+            <!-- Navbar -->
+            <div th:replace="layout/header :: header"></div>
+            <!-- /.navbar -->
+
+            <!-- Main Sidebar Container -->
+            <div th:replace="layout/sidebar :: sidebar"></div>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div th:include="${content}">
+            </div>
+            <!-- /.content-wrapper -->
+
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Control sidebar content goes here -->
+            </aside>
+            <!-- /.control-sidebar -->
+
+            <!-- Main Footer -->
+            <div th:replace="layout/footer :: footer"></div>
+            <footer class="main-footer">
+                <strong>Copyright &copy; 2014-2019<a href="http://adminlte.io">AdminLTE.io</a>.
+                </strong>
+                All rights reserved.
+                <div class="float-right d-none d-sm-inline-block">
+                    <b>Version</b>
+                    3.0.1
+                </div>
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- REQUIRED SCRIPTS -->
+
+        <!-- jQuery -->
+        <script th:src="@{js/jquery/jquery.min.js}"></script>
+        <!-- Bootstrap -->
+        <script th:src="@{js/bootstrap/js/bootstrap.bundle.min.js}"></script>
+        <!-- AdminLTE -->
+        <script th:src="@{js/adminlte/adminlte.js}"></script>
+
+        <!-- OPTIONAL SCRIPTS -->
+        <script th:src="@{js/chart.js/Chart.min.js}"></script>
+        <script th:src="@{js/adminlte/demo.js}"></script>
+        <script th:src="@{js/adminlte/pages/dashboard3.js}"></script>
+    </body>
+</html>
