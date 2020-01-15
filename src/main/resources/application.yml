@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: awesome-shop
+
+server:
+  port: 8080
+
+info:
+  app:
+    name: ${spring.application.name}
+    description: @project.description@
+    version: @project.version@
