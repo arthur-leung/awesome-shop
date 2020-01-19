@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title th:replace="${title}">AdminLTE 3 | Dashboard 3</title>
+        <title th:replace="${title}"></title>
         <!-- Font Awesome Icons -->
-        <link rel="stylesheet" th:href="@{css/fontawesome-free/css/all.min.css}">
+        <link rel="stylesheet" th:href="@{/css/fontawesome-free/css/all.min.css}">
         <!-- IonIcons -->
         <link rel="stylesheet" th:href="@{http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css}">
         <!-- Theme style -->
-        <link rel="stylesheet" th:href="@{css/adminlte/adminlte.min.css}">
+        <link rel="stylesheet" th:href="@{/css/adminlte/adminlte.min.css}">
     </head>
     <!--
     BODY TAG OPTIONS:
@@ -44,30 +44,20 @@
 
             <!-- Main Footer -->
             <div th:replace="layout/footer :: footer"></div>
-            <footer class="main-footer">
-                <strong>Copyright &copy; 2014-2019<a href="http://adminlte.io">AdminLTE.io</a>.
-                </strong>
-                All rights reserved.
-                <div class="float-right d-none d-sm-inline-block">
-                    <b>Version</b>
-                    3.0.1
-                </div>
-            </footer>
         </div>
         <!-- ./wrapper -->
 
         <!-- REQUIRED SCRIPTS -->
 
         <!-- jQuery -->
-        <script th:src="@{js/jquery/jquery.min.js}"></script>
+        <script th:src="@{/js/jquery/jquery.min.js}"></script>
         <!-- Bootstrap -->
-        <script th:src="@{js/bootstrap/js/bootstrap.bundle.min.js}"></script>
+        <script th:src="@{/js/bootstrap/js/bootstrap.bundle.min.js}"></script>
         <!-- AdminLTE -->
-        <script th:src="@{js/adminlte/adminlte.js}"></script>
+        <script th:src="@{/js/adminlte/adminlte.js}"></script>
 
         <!-- OPTIONAL SCRIPTS -->
-        <script th:src="@{js/chart.js/Chart.min.js}"></script>
-        <script th:src="@{js/adminlte/demo.js}"></script>
-        <script th:src="@{js/adminlte/pages/dashboard3.js}"></script>
+        <script th:src="@{/js/chart.js/Chart.min.js}"></script>
+        <script th:src="@{/js/adminlte/demo.js}"></script>
     </body>
 </html>

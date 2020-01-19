@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/layout :: layout(~{::title}, ~{::section})}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AdminLTE 3 | Dashboard 3</title>
+</head>
+<body>
+<!-- Content Wrapper. Contains page content -->
+<section>
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">商品分类</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">看板</a></li>
+                            <li class="breadcrumb-item active">商品分类</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">商品分类</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th style="width: 10px">#</th>
+                                        <th>名称</th>
+                                        <th>图片</th>
+                                        <th>状态</th>
+                                        <th>排序</th>
+                                        <th>首页展示</th>
+                                        <th>更新时间</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="category : ${data.getRows()}">
+                                        <td th:text="${category.getId()}"></td>
+                                        <td th:text="${category.getName()}"></td>
+                                        <td th:text="${category.getCoverImage()}"></td>
+                                        <td th:text="${category.getStatus()}"></td>
+                                        <td th:text="${category.getSort()}"></td>
+                                        <td th:text="${category.getIsShowIndex()}"></td>
+                                        <td th:text="${#dates.format(category.getUpdatedAt(), 'yyyy/MM/dd HH:mm')}"></td>
+                                        <td>更新 | 删除</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                            <div th:replace="layout/pagenation :: pagenation('/admin/category/list')"></div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+    </div>
+</section>
+<!-- /.content-wrapper -->
+</body>
+</html>

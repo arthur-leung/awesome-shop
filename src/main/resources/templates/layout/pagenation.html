@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+    </head>
+    <body>
+        <div th:fragment="pagenation(current_url)" class="card-footer clearfix">
+            <ul class="pagination pagination-sm m-0 float-right">
+                <li class="page-item"><a class="page-link" th:if="${data.page.current != 1 && data.page.pages != 1}" th:href="@{${current_url}(page=${data.page.current - 1})}">&laquo;</a></li>
+                <li th:each="i : ${#numbers.sequence(1, data.page.pages)}" th:class="${data.page.current == i} ? 'page-item active' : 'page-item'"><a class="page-link"  th:href="@{${current_url}(page=${i})}" th:text="${i}">1</a></li>
+                <li class="page-item"><a class="page-link" th:if="${data.page.current != data.page.pages && data.page.pages != 1}" th:href="@{${current_url}(page=${data.page.current + 1})}">&raquo;</a></li>
+            </ul>
+        </div>
+    </body>
+</html>
